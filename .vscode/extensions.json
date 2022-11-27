@@ -1,0 +1,24 @@
+{
+  "recommendations": [
+    "mike-co.import-sorter",
+    "tabnine.tabnine-vscode",
+    "simonsiefke.svg-preview",
+    "richie5um2.vscode-sort-json",
+    "zengxingxin.sort-js-object-keys",
+    "foxundermoon.shell-format",
+    "sburg.vscode-javascript-booster",
+    "bradgashler.htmltagwrap",
+    "mkaufman.htmlhint",
+    "eamodio.gitlens",
+    "ms-azuretools.vscode-docker",
+    "donjayamanne.githistory",
+    "mhutchie.git-graph",
+    "drknoxy.eslint-disable-snippets",
+    "dbaeumer.vscode-eslint",
+    "tht13.html-preview-vscode",
+    "prisma.prisma",
+    "esbenp.prettier-vscode",
+    "irongeek.vscode-env",
+    "bungcip.better-toml"
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "ava": {
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "7.13.0",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "@koa/cors": "3.4.1",
+    "@prisma/client": "3.14.0",
+    "@shopify/app-bridge-react": "^2.0.6",
+    "@shopify/app-bridge-utils": "^2.0.6",
+    "@shopify/koa-shopify-auth": "^5.0.3",
+    "@shopify/polaris": "^6.6.0",
+    "@shopify/shopify-api": "2.1.0",
+    "blitz": "0.45.4",
+    "cors": "2.8.5",
+    "cross-fetch": "3.1.5",
+    "final-form": "4.20.6",
+    "graphql": "^14.5.8",
+    "immortal-db": "1.1.0",
+    "koa": "^2.13.1",
+    "koa-router": "^10.0.0",
+    "koa-session": "^6.1.0",
+    "liquidjs": "9.37.0",
+    "liquidjs-section-tags": "1.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-final-form": "6.5.9",
+    "safe-json-parse": "4.0.0",
+    "styled-jsx": "5.0.2",
+    "zod": "3.14.4"
+  },
+  "devDependencies": {
+    "@shopify/app": "3.3.3",
+    "@shopify/cli": "3.3.3",
+    "@swc/cli": "0.1.57",
+    "@swc/core": "1.2.223",
+    "@trivago/prettier-plugin-sort-imports": "3.3.0",
+    "@types/cors": "2.8.12",
+    "@types/koa": "2.13.4",
+    "@types/koa-router": "7.4.4",
+    "@types/koa__cors": "3.3.0",
+    "@types/node": "17.0.31",
+    "@types/preview-email": "2.0.1",
+    "@types/react": "18.0.1",
+    "@typescript-eslint/eslint-plugin": "4.29.1",
+    "@typescript-eslint/parser": "4.29.1",
+    "ava": "4.3.3",
+    "dotenv": "16.0.0",
+    "eslint": "7.2.0",
+    "eslint-plugin-react": "7.29.4",
+    "eslint-plugin-react-hooks": "4.4.0",
+    "graphql-tag": "2.12.6",
+    "husky": "7.0.4",
+    "lint-staged": "12.4.2",
+    "nodemon": "2.0.15",
+    "prettier": "2.6.2",
+    "prettier-plugin-prisma": "3.14.0",
+    "pretty-quick": "3.1.3",
+    "preview-email": "3.0.5",
+    "prisma": "3.14.0",
+    "terser-webpack-plugin": "5.3.4",
+    "ts-loader": "9.3.1",
+    "ts-node": "10.8.0",
+    "tsc-watch": "5.0.3",
+    "tsconfig-paths": "4.1.0",
+    "tsconfig-paths-webpack-plugin": "4.0.0",
+    "typescript": "4.6.3",
+    "webpack": "5.72.1",
+    "webpack-cli": "4.10.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
+    ]
+  },
+  "name": "recentify",
+  "prisma": {
+    "schema": "db/schema.prisma"
+  },
+  "private": true,
+  "scripts": {
+    "auth": "shopify ngrok auth $NGROK_TOKEN",
+    "build": "blitz build",
+    "db": "docker compose up -d",
+    "dev": "pnpm db && shopify app dev",
+    "lint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "local": "nodemon web/index.ts --ignore blitz-env.d.ts",
+    "migrate": "pnpm db && blitz prisma migrate dev",
+    "prepare": "husky install",
+    "serve": "shopify app serve",
+    "start": "cross-env NODE_ENV=production node ./entrypoint.js",
+    "studio": "pnpm db && blitz prisma studio",
+    "test": "ava",
+    "types": "clear && tsc --noEmit"
+  },
+  "version": "1.0.0"
+}
